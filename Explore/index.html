@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SHOPYSTREET</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --ice:#E6F0F8;     /* LOCKED */
+  --silver:#F6F7F8;  /* LOCKED */
+  --ink:#111;
+  --soft:#6a6a6a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  color:var(--ink);
+  font-family:"Helvetica Neue", Arial, sans-serif;
+  text-align:center;
+
+  /* 🔒 FINAL BACKGROUND */
+  background:
+    radial-gradient(
+      circle at center,
+      var(--ice) 0%,
+      var(--ice) 65%,
+      var(--silver) 100%
+    );
+}
+
+.container{
+  max-width:760px;
+  margin:auto;
+  padding:32px 18px 90px;
+}
+
+/* TYPOGRAPHY */
+.heading{
+  font-weight:800;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+.sub{
+  font-family:"Inter","SF Pro Text",Arial,sans-serif;
+  font-size:11px;
+  font-weight:400;
+  letter-spacing:.9px;
+  text-transform:uppercase;
+  color:var(--soft);
+}
+
+/* TITLE */
+.page-title{
+  font-size:30px;
+  margin-bottom:36px;
+}
+
+/* RADIO */
+.radio{
+  border:3px solid var(--ink);
+  border-radius:20px;
+  padding:22px 18px;
+  margin-bottom:42px;
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(2px);
+}
+.radio .heading{font-size:16px;}
+.radio .sub{margin:6px 0 14px;}
+audio{width:100%;}
+
+/* CATEGORY */
+.category{
+  border:3px solid var(--ink);
+  border-radius:20px;
+  padding:18px;
+  margin-bottom:20px;
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(2px);
+}
+.category.collapsible{cursor:pointer;}
+
+.cat-head{position:relative;}
+.arrow{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:14px;
+}
+
+/* STORES */
+.stores{display:none;margin-top:18px;}
+.category.open .stores{display:block;}
+
+.store{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin:18px 0;
+}
+.rule{
+  width:60%;
+  height:1px;
+  background:var(--ink);
+  opacity:.25;
+  margin:10px 0;
+}
+.store button,
+.store a{
+  all:unset;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.store-name{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+.store-phone{margin-top:4px;}
+
+/* FEATURED */
+.featured-name{
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.featured-tagline{margin-top:6px;}
+
+/* CTA */
+.cta{margin:48px 0;}
+.cta a{
+  display:block;
+  border:3px solid var(--ink);
+  border-radius:22px;
+  padding:20px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--ink);
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(2px);
+}
+
+/* FOOTER */
+footer{margin-top:50px;}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+.modal-box{
+  background:radial-gradient(circle,var(--ice),var(--silver));
+  border:3px solid var(--ink);
+  border-radius:24px;
+  padding:30px 22px;
+  width:90%;
+  max-width:340px;
+}
+.modal-box .heading{font-size:16px;margin-bottom:10px;}
+.modal-box .sub{margin-bottom:26px;}
+.modal-box a{
+  display:block;
+  border:3px solid var(--ink);
+  border-radius:20px;
+  padding:16px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--ink);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="page-title heading">SHOPYSTREET</div>
+
+<!-- RADIO -->
+<div class="radio">
+  <div class="heading">SHOPYSTREET RADIO</div>
+  <div class="sub">STUDIO BROADCAST</div>
+  <audio controls></audio>
+</div>
+
+<!-- FEATURED (ALWAYS OPEN) -->
+<div class="category">
+  <div class="heading">FEATURED STORES</div>
+  <div class="sub">DIRECT ACCESS</div>
+
+  <div class="store">
+    <div class="rule"></div>
+    <a href="STORE_LINK_HERE">
+      <div class="featured-name">WARSTREET DIGITAL GIFT STORE</div>
+      <div class="featured-tagline sub">DIGITAL GIFTS · MEMORIES · EXPERIENCES</div>
+    </a>
+    <div class="rule"></div>
+  </div>
+</div>
+
+<!-- COLLAPSIBLE CATEGORIES (UNCHANGED STRUCTURE) -->
+<div class="category collapsible" onclick="toggle(this)">
+  <div class="cat-head">
+    <div class="heading">FASHION & COSMETICS</div>
+    <div class="sub">CLOTHING, STREETWEAR, PERFUMES</div>
+    <div class="arrow">⌄</div>
+  </div>
+  <div class="stores">
+    <div class="store"><div class="rule"></div><button onclick="openModal('SAMPLEMAN STREET WEAR','0715909492')"><div class="store-name">SAMPLEMAN STREET WEAR</div><div class="store-phone sub">0715909492</div></button><div class="rule"></div></div>
+    <div class="store"><div class="rule"></div><button onclick="openModal('SUKU WARD THE PLUG','0788808932')"><div class="store-name">SUKU WARD THE PLUG</div><div class="store-phone sub">0788808932</div></button><div class="rule"></div></div>
+    <div class="store"><div class="rule"></div><button onclick="openModal('THE WARSTREET EDIT','0775485790')"><div class="store-name">THE WARSTREET EDIT</div><div class="store-phone sub">0775485790</div></button><div class="rule"></div></div>
+    <div class="store"><div class="rule"></div><button onclick="openModal('AURA NOIR','0785992151')"><div class="store-name">AURA NOIR</div><div class="store-phone sub">0785992151</div></button><div class="rule"></div></div>
+  </div>
+</div>
+
+<div class="category collapsible" onclick="toggle(this)">
+  <div class="cat-head">
+    <div class="heading">HAIR & BEAUTY</div>
+    <div class="sub">NAILS, HAIR CARE, BEAUTY SERVICES</div>
+    <div class="arrow">⌄</div>
+  </div>
+  <div class="stores">
+    <div class="store"><div class="rule"></div><button onclick="openModal('SAMANYANGA NAILS','0785005456')"><div class="store-name">SAMANYANGA NAILS</div><div class="store-phone sub">0785005456</div></button><div class="rule"></div></div>
+  </div>
+</div>
+
+<div class="category collapsible" onclick="toggle(this)">
+  <div class="cat-head">
+    <div class="heading">FOOD & GROCERIES</div>
+    <div class="sub">FOOD, SNACKS, DAILY ESSENTIALS</div>
+    <div class="arrow">⌄</div>
+  </div>
+  <div class="stores">
+    <div class="store"><div class="rule"></div><button onclick="openModal('PAIRO’S CANDY HUB','0784030492')"><div class="store-name">PAIRO’S CANDY HUB</div><div class="store-phone sub">0784030492</div></button><div class="rule"></div></div>
+    <div class="store"><div class="rule"></div><button onclick="openModal('MAI MUTISI EGG STORE','0780431696')"><div class="store-name">MAI MUTISI EGG STORE</div><div class="store-phone sub">0780431696</div></button><div class="rule"></div></div>
+  </div>
+</div>
+
+<div class="category collapsible" onclick="toggle(this)">
+  <div class="cat-head">
+    <div class="heading">GIFTS</div>
+    <div class="sub">CURATED GIFTS & SPECIALTY ITEMS</div>
+    <div class="arrow">⌄</div>
+  </div>
+  <div class="stores">
+    <div class="store"><div class="rule"></div><button onclick="openModal('GOLDSHED GIFT STORE','0773605293')"><div class="store-name">GOLDSHED GIFT STORE</div><div class="store-phone sub">0773605293</div></button><div class="rule"></div></div>
+  </div>
+</div>
+
+<div class="cta">
+  <a href="tel:0779068932">ADVERTISE YOUR STORE ON SHOPYSTREET</a>
+</div>
+
+<footer class="sub">POWERED BY ZALACKRON SMART OPERATING SYSTEM</footer>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="heading" id="modalTitle"></div>
+    <div class="sub">THIS STORE IS NOT PUBLICLY ACCESSIBLE ON SHOPYSTREET</div>
+    <a id="modalCall" href="#">CALL THE STORE</a>
+  </div>
+</div>
+
+<script>
+function toggle(el){ el.classList.toggle("open"); }
+function openModal(name, phone){
+  event.stopPropagation();
+  document.getElementById("modalTitle").innerText = name;
+  document.getElementById("modalCall").href = "tel:" + phone;
+  document.getElementById("modal").style.display = "flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
