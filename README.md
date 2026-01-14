@@ -1,2 +1,0 @@
-# Shopystreet-
-Shopystreet digital platform 
