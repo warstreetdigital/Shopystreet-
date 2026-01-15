@@ -15,11 +15,7 @@
       --bg: #f7f7f7;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background: var(--bg);
@@ -51,7 +47,6 @@
       justify-content: center;
       margin-bottom: 16px;
     }
-
     .profile img {
       width: 96px;
       height: 96px;
@@ -80,10 +75,7 @@
     }
 
     /* AUDIO */
-    audio {
-      width: 100%;
-      margin-bottom: 22px;
-    }
+    audio { width: 100%; margin-bottom: 22px; }
 
     /* LOCATION */
     .location {
@@ -101,7 +93,6 @@
       overflow: hidden;
       margin-bottom: 26px;
     }
-
     .slideshow img {
       position: absolute;
       inset: 0;
@@ -111,7 +102,6 @@
       opacity: 0;
       animation: fade 15s infinite;
     }
-
     .slideshow img:nth-child(1) { animation-delay: 0s; }
     .slideshow img:nth-child(2) { animation-delay: 5s; }
     .slideshow img:nth-child(3) { animation-delay: 10s; }
@@ -130,7 +120,6 @@
       gap: 12px;
       margin-bottom: 30px;
     }
-
     .btn {
       flex: 1;
       padding: 15px 12px;
@@ -145,26 +134,12 @@
       justify-content: center;
       transition: transform 0.15s ease;
     }
-
-    .btn.primary {
-      background: var(--black);
-      color: #fff;
-    }
-
-    .btn.secondary {
-      background: var(--graphite);
-      color: #fff;
-    }
-
-    .btn:active {
-      transform: scale(0.97);
-    }
+    .btn.primary { background: var(--black); color: #fff; }
+    .btn.secondary { background: var(--graphite); color: #fff; }
+    .btn:active { transform: scale(0.97); }
 
     /* SERVICES */
-    details {
-      margin-bottom: 30px;
-    }
-
+    details { margin-bottom: 30px; }
     summary {
       list-style: none;
       cursor: pointer;
@@ -177,59 +152,46 @@
       letter-spacing: 1.4px;
       text-transform: uppercase;
     }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
+    summary::-webkit-details-marker { display: none; }
 
     .service {
       padding: 16px 0;
       border-bottom: 1px solid var(--border);
     }
-
-    .service-name {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
+    .service-name { font-size: 14px; font-weight: 600; }
     .service-meta {
       font-size: 12px;
       color: var(--soft-gray);
       margin-top: 6px;
     }
 
-    /* CRAFT */
-    .craft {
-      margin-bottom: 30px;
-    }
-
+    /* CRAFT (CUTS) — FIXED SCROLL */
+    .craft { margin-bottom: 30px; }
     .craft-title {
       font-size: 13px;
       letter-spacing: 1.4px;
       margin-bottom: 14px;
       text-transform: uppercase;
     }
-
     .cuts {
       display: flex;
       gap: 12px;
       overflow-x: auto;
-      justify-content: center;
+      padding: 0 12px;
+      scroll-snap-type: x mandatory;
     }
-
     .cuts img {
       width: 140px;
       height: 170px;
       border-radius: 14px;
       object-fit: cover;
       flex-shrink: 0;
+      scroll-snap-align: center;
+      cursor: pointer;
     }
 
     /* EXPLORE */
-    .explore {
-      margin-bottom: 20px;
-    }
-
+    .explore { margin-bottom: 20px; }
     .explore a {
       display: inline-block;
       padding: 14px 18px;
@@ -282,12 +244,9 @@
 
     <!-- ACTIONS -->
     <div class="actions">
-      <a class="btn secondary" href="tel:+263779068932">
-        CALL BARBER
-      </a>
-
+      <a class="btn secondary" href="tel:+263779068932">CALL BARBER</a>
       <a class="btn primary"
-         href="https://wa.me/263779068932?text=Hello%20STB%20BARBER%2C%0AI’d%20like%20to%20book%20an%20appointment.%0A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0AName%3A%0A%0ASent%20via%20Shopystreet">
+         href="https://wa.me/263779068932?text=Hello%20STB%20BARBER%2C%0AI%E2%80%99d%20like%20to%20book%20an%20appointment.%0A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0AName%3A%0A%0ASent%20via%20Shopystreet">
         BOOK APPOINTMENT
       </a>
     </div>
@@ -321,12 +280,12 @@
     <div class="craft">
       <div class="craft-title">OUR CRAFT</div>
       <div class="cuts">
-        <img src="cut1.jpg">
-        <img src="cut2.jpeg">
-        <img src="cut3.jpg">
-        <img src="cut4.jpg">
-        <img src="cut5.png">
-        <img src="cut6.jpg">
+        <img src="cut1.jpg" alt="">
+        <img src="cut2.jpeg" alt="">
+        <img src="cut3.jpg" alt="">
+        <img src="cut4.jpg" alt="">
+        <img src="cut5.png" alt="">
+        <img src="cut6.jpg" alt="">
       </div>
     </div>
 
@@ -337,10 +296,37 @@
       </a>
     </div>
 
-    <footer>
-      Powered by Shopystreet
-    </footer>
+    <footer>Powered by Shopystreet</footer>
 
   </div>
+
+  <!-- IMAGE MODAL -->
+  <div id="imageModal" style="
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.92);
+    z-index:9999;
+    align-items:center;
+    justify-content:center;">
+    <img id="modalImg" style="max-width:92%; max-height:92%; border-radius:12px;">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+
+    document.querySelectorAll(".cuts img").forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+      });
+    });
+
+    modal.addEventListener("click", () => {
+      modal.style.display = "none";
+      modalImg.src = "";
+    });
+  </script>
 </body>
 </html>
