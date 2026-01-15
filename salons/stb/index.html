@@ -45,14 +45,19 @@
       padding: 28px 24px 32px;
     }
 
-    /* IDENTITY */
+    /* PROFILE */
+    .profile {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
     .profile img {
       width: 96px;
       height: 96px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--border);
-      margin-bottom: 16px;
     }
 
     h1 {
@@ -135,10 +140,10 @@
       font-weight: 600;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-      transition: transform 0.15s ease;
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 0.15s ease;
     }
 
     .btn.primary {
@@ -155,7 +160,7 @@
       transform: scale(0.97);
     }
 
-    /* SERVICES DROPDOWN */
+    /* SERVICES */
     details {
       margin-bottom: 30px;
     }
@@ -193,7 +198,7 @@
       margin-top: 6px;
     }
 
-    /* CUTS — CREATIVE PRESENTATION */
+    /* CRAFT */
     .craft {
       margin-bottom: 30px;
     }
@@ -220,7 +225,7 @@
       flex-shrink: 0;
     }
 
-    /* EXPLORE BUTTON */
+    /* EXPLORE */
     .explore {
       margin-bottom: 20px;
     }
@@ -249,8 +254,10 @@
 <body>
   <div class="container">
 
-    <!-- IDENTITY -->
-    <img src="profile.jpg" alt="STB BARBER" class="profile">
+    <!-- PROFILE -->
+    <div class="profile">
+      <img src="profile.jpg" alt="STB BARBER">
+    </div>
 
     <h1>STB BARBER</h1>
     <div class="badge">SHOPYSTREET BARBER</div>
@@ -314,12 +321,12 @@
     <div class="craft">
       <div class="craft-title">OUR CRAFT</div>
       <div class="cuts">
-        <img src="cuts/cut1.jpg">
-        <img src="cuts/cut2.jpg">
-        <img src="cuts/cut3.jpg">
-        <img src="cuts/cut4.jpg">
-        <img src="cuts/cut5.jpg">
-        <img src="cuts/cut6.jpg">
+        <img src="cut1.jpg">
+        <img src="cut2.jpeg">
+        <img src="cut3.jpg">
+        <img src="cut4.jpg">
+        <img src="cut5.png">
+        <img src="cut6.jpg">
       </div>
     </div>
 
