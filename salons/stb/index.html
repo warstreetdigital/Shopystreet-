@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>STB BARBER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f0f0f" />
+
+  <style>
+    :root {
+      --black: #0f0f0f;
+      --graphite: #1c1c1c;
+      --soft-gray: #6f6f6f;
+      --border: #e5e5e5;
+      --bg: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--black);
+      font-family:
+        "Inter Tight",
+        "IBM Plex Sans",
+        "Helvetica Neue",
+        Arial,
+        system-ui,
+        sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 18px;
+      padding: 28px 24px 32px;
+    }
+
+    /* IDENTITY */
+    .profile img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 22px;
+      letter-spacing: 1.4px;
+      margin-bottom: 6px;
+    }
+
+    .badge {
+      font-size: 11px;
+      letter-spacing: 1.6px;
+      color: var(--soft-gray);
+      margin-bottom: 14px;
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: #2a2a2a;
+      margin-bottom: 20px;
+    }
+
+    /* AUDIO */
+    audio {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    /* LOCATION */
+    .location {
+      font-size: 12px;
+      color: var(--soft-gray);
+      margin-bottom: 24px;
+      letter-spacing: 0.8px;
+    }
+
+    /* SLIDESHOW */
+    .slideshow {
+      position: relative;
+      height: 210px;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 26px;
+    }
+
+    .slideshow img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: fade 15s infinite;
+    }
+
+    .slideshow img:nth-child(1) { animation-delay: 0s; }
+    .slideshow img:nth-child(2) { animation-delay: 5s; }
+    .slideshow img:nth-child(3) { animation-delay: 10s; }
+
+    @keyframes fade {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      33% { opacity: 1; }
+      43% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* ACTION BUTTONS */
+    .actions {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 15px 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      transition: transform 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn.primary {
+      background: var(--black);
+      color: #fff;
+    }
+
+    .btn.secondary {
+      background: var(--graphite);
+      color: #fff;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    /* SERVICES DROPDOWN */
+    details {
+      margin-bottom: 30px;
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 16px;
+      border-radius: 14px;
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .service {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-name {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .service-meta {
+      font-size: 12px;
+      color: var(--soft-gray);
+      margin-top: 6px;
+    }
+
+    /* CUTS — CREATIVE PRESENTATION */
+    .craft {
+      margin-bottom: 30px;
+    }
+
+    .craft-title {
+      font-size: 13px;
+      letter-spacing: 1.4px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .cuts {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      justify-content: center;
+    }
+
+    .cuts img {
+      width: 140px;
+      height: 170px;
+      border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    /* EXPLORE BUTTON */
+    .explore {
+      margin-bottom: 20px;
+    }
+
+    .explore a {
+      display: inline-block;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    footer {
+      font-size: 11px;
+      color: var(--soft-gray);
+      letter-spacing: 0.8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- IDENTITY -->
+    <img src="profile.jpg" alt="STB BARBER" class="profile">
+
+    <h1>STB BARBER</h1>
+    <div class="badge">SHOPYSTREET BARBER</div>
+    <div class="tagline">PRECISION CUTS · CLEAN FADES · MODERN CRAFT</div>
+
+    <!-- AUDIO -->
+    <audio controls>
+      <source src="stb.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- LOCATION -->
+    <div class="location">
+      HARARE · MON–SAT · 08:00–18:00
+    </div>
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow">
+      <img src="slide1.jpg">
+      <img src="slide2.jpg">
+      <img src="slide3.jpg">
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+      <a class="btn secondary" href="tel:+263779068932">
+        CALL BARBER
+      </a>
+
+      <a class="btn primary"
+         href="https://wa.me/263779068932?text=Hello%20STB%20BARBER%2C%0AI’d%20like%20to%20book%20an%20appointment.%0A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0AName%3A%0A%0ASent%20via%20Shopystreet">
+        BOOK APPOINTMENT
+      </a>
+    </div>
+
+    <!-- SERVICES -->
+    <details>
+      <summary>SERVICES</summary>
+
+      <div class="service">
+        <div class="service-name">BASIC HAIRCUT</div>
+        <div class="service-meta">5USD to 7USD · 20–30 MINS</div>
+      </div>
+
+      <div class="service">
+        <div class="service-name">FADE / TAPER</div>
+        <div class="service-meta">10USD to 20USD · 30–45 MINS</div>
+      </div>
+
+      <div class="service">
+        <div class="service-name">BEARD TRIM</div>
+        <div class="service-meta">3USD to 5USD · 15 MINS</div>
+      </div>
+
+      <div class="service">
+        <div class="service-name">DESIGN CUT</div>
+        <div class="service-meta">FROM 15USD</div>
+      </div>
+    </details>
+
+    <!-- CRAFT -->
+    <div class="craft">
+      <div class="craft-title">OUR CRAFT</div>
+      <div class="cuts">
+        <img src="cuts/cut1.jpg">
+        <img src="cuts/cut2.jpg">
+        <img src="cuts/cut3.jpg">
+        <img src="cuts/cut4.jpg">
+        <img src="cuts/cut5.jpg">
+        <img src="cuts/cut6.jpg">
+      </div>
+    </div>
+
+    <!-- EXPLORE -->
+    <div class="explore">
+      <a href="https://warstreetdigital.github.io/Shopystreet-/Explore/">
+        EXPLORE OTHER STORES
+      </a>
+    </div>
+
+    <footer>
+      Powered by Shopystreet
+    </footer>
+
+  </div>
+</body>
+</html>
