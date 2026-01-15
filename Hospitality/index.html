@@ -1,0 +1,38 @@
+// Slideshow Logic
+let currentSlide = 0;
+const track = document.getElementById('slideshowTrack');
+const totalSlides = 3;
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+setInterval(nextSlide, 5000);
+
+// Inline Expansion Toggle
+function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.classList.toggle('active');
+}
+
+// Modal Logic
+function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.style.display = 'flex';
+}
+
+function closeModal(event, id) {
+    // Close if clicking outside the content (empty space)
+    if (event.target.id === id) {
+        document.getElementById(id).style.display = 'none';
+    }
+}
+
+// Full-screen Image Modal
+function openImageModal(src) {
+    const modal = document.getElementById('imageModal');
+    const img = document.getElementById('modalImg');
+    img.src = src;
+    modal.style.display = 'flex';
+}
