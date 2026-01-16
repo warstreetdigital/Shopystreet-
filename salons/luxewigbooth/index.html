@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LUXE WIG BOOTH</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+:root{
+  --black:#0f0f0f;
+  --gray:#6f6f6f;
+  --border:#e5e5e5;
+  --bg:#f4e9ee;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:var(--bg);
+  font-family:"Inter Tight","IBM Plex Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  display:flex;
+  justify-content:center;
+  padding:24px 16px;
+  color:var(--black);
+}
+
+.container{
+  max-width:420px;
+  width:100%;
+  background:#fffefe;
+  border-radius:18px;
+  padding:28px 24px 32px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  text-align:center;
+}
+
+h1{
+  font-size:22px;
+  letter-spacing:1.6px;
+  margin-bottom:6px;
+}
+
+.badge{
+  font-size:11px;
+  letter-spacing:1.6px;
+  color:var(--gray);
+  margin-bottom:22px;
+}
+
+/* WORD SLIDESHOW */
+.word-slideshow{
+  position:relative;
+  height:90px;
+  margin-bottom:30px;
+}
+.word{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  font-weight:700;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  opacity:0;
+  animation:wordfade 20s infinite;
+}
+.word:nth-child(1){animation-delay:0s}
+.word:nth-child(2){animation-delay:5s}
+.word:nth-child(3){animation-delay:10s}
+.word:nth-child(4){animation-delay:15s}
+
+@keyframes wordfade{
+  0%{opacity:0}
+  10%{opacity:1}
+  30%{opacity:1}
+  40%{opacity:0}
+  100%{opacity:0}
+}
+
+/* SECTIONS */
+.section{margin-bottom:32px}
+.section-title{
+  font-size:13px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+/* GRIDS */
+.grid-2x2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+
+.grid-2x2 img,
+.grid-3 img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+/* BUTTONS */
+.primary-btn{
+  display:block;
+  width:100%;
+  padding:18px 12px;
+  margin-bottom:14px;
+  border-radius:14px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+}
+
+.secondary-btn{
+  display:block;
+  width:100%;
+  padding:14px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  color:var(--black);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+
+footer{
+  margin-top:24px;
+  font-size:11px;
+  color:var(--gray);
+  letter-spacing:.8px;
+}
+
+/* MODAL */
+#modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.92);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:18px;
+}
+#modal img{
+  max-width:90%;
+  max-height:70%;
+  border-radius:12px;
+}
+#modal a{
+  padding:14px 20px;
+  background:#fff;
+  color:#000;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>LUXE WIG BOOTH</h1>
+<div class="badge">BY TANAKA LUXE HAIR</div>
+
+<div class="word-slideshow">
+  <div class="word">CURATED WIGS · SOURCED ON DEMAND</div>
+  <div class="word">ORDER TODAY · DELIVERY IN 2–5 DAYS</div>
+  <div class="word">QUALITY CHECKED · SHOPYSTREET SOURCED</div>
+  <div class="word">NO STOCK LIMITS · MULTIPLE STYLES</div>
+</div>
+
+<div class="section">
+  <div class="section-title">WIGS</div>
+  <div class="grid-2x2">
+    <img src="luxe-wig-1.jpg">
+    <img src="luxe-wig-2.jpg">
+    <img src="luxe-wig-3.jpg">
+    <img src="luxe-wig-4.jpg">
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">EXTENSIONS</div>
+  <div class="grid-3">
+    <img src="luxe-ext-1.jpg">
+    <img src="luxe-ext-2.jpg">
+    <img src="luxe-ext-3.jpg">
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">HAIR ACCESSORIES</div>
+  <div class="grid-3">
+    <img src="luxe-acc-1.jpg">
+    <img src="luxe-acc-2.jpg">
+    <img src="luxe-acc-3.jpg">
+  </div>
+</div>
+
+<a class="primary-btn"
+href="https://wa.me/263782735634?text=Hello%20Luxe%20Wig%20Booth%2C%0A%0AI’d%20like%20to%20upload%20a%20style%20I%20want.%0A%0APlease%20confirm%20availability%2C%20price%20and%20delivery.%0A%0ASent%20via%20Shopystreet">
+UPLOAD A STYLE YOU WANT
+</a>
+
+<a class="secondary-btn"
+href="https://warstreetdigital.github.io/Shopystreet-/salons/tanakaluxehair">
+BACK TO SALON
+</a>
+
+<footer>Powered by Shopystreet</footer>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal">
+  <img id="modalImg">
+  <a id="orderLink" target="_blank">INQUIRE THIS STYLE</a>
+</div>
+
+<script>
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+const orderLink=document.getElementById("orderLink");
+
+document.querySelectorAll("img").forEach(img=>{
+  img.onclick=()=>{
+    const style = img.src.split("/").pop();
+    modal.style.display="flex";
+    modalImg.src=img.src;
+    orderLink.href =
+      "https://wa.me/263782735634?text=" +
+      encodeURIComponent(
+        `Hello Luxe Wig Booth,
+
+I’m interested in this style:
+STYLE: ${style}
+
+Please share price & delivery details.
+
+Sent via Shopystreet`
+      );
+  };
+});
+
+modal.onclick=(e)=>{
+  if(e.target===modal){
+    modal.style.display="none";
+    modalImg.src="";
+  }
+};
+</script>
+
+</body>
+  </html>
