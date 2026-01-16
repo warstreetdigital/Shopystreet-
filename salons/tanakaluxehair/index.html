@@ -12,7 +12,7 @@
   --graphite:#1c1c1c;
   --gray:#6f6f6f;
   --border:#e5e5e5;
-  --bg:#f7f7f7;
+  --bg:#f4e9ee; /* visible soft blush */
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -30,9 +30,10 @@ body{
 .container{
   max-width:420px;
   width:100%;
-  background:#fff;
+  background:#fffefe;
   border-radius:18px;
   padding:28px 24px 32px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
 /* PROFILE */
@@ -81,20 +82,22 @@ audio{
   margin-bottom:24px;
 }
 
-/* SLIDESHOW */
+/* SLIDESHOW — BIGGER, FULL VIEW, NO CROP */
 .slideshow{
   position:relative;
-  height:210px;
-  border-radius:14px;
+  height:260px;              /* bigger frame */
+  border-radius:16px;
   overflow:hidden;
   margin-bottom:26px;
+  background:#ededed;
 }
 .slideshow img{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;        /* full image visible */
+  background:#ededed;
   opacity:0;
   animation:fade 15s infinite;
 }
@@ -235,7 +238,7 @@ footer{
   <source src="luxe.mp3" type="audio/mpeg">
 </audio>
 
-<div class="location">HARARE CBD · CHITEPO & 7TH</div>
+<div class="location">HARARE CBD · CHITEPO &amp; 7TH</div>
 
 <div class="slideshow">
   <img src="slide1.jpg">
@@ -245,10 +248,7 @@ footer{
 
 <div class="actions">
   <a class="btn secondary" href="tel:+263782735634">CALL SALON</a>
-  <a class="btn primary"
-     href="https://wa.me/263782735634?text=Hello%20Tanaka%20Luxe%20Hair%2C%0AI’d%20like%20to%20book%20an%20appointment.%0A%0AService%3A%0APreferred%20Date%3A%0APreferred%20Time%3A%0ALocation%3A%20In-salon%20or%20House%20Call%0AName%3A%0A%0ASent%20via%20Shopystreet">
-     BOOK APPOINTMENT
-  </a>
+  <a class="btn primary" href="https://wa.me/263782735634">BOOK APPOINTMENT</a>
 </div>
 
 <a class="luxe-btn" href="https://warstreetdigital.github.io/Shopystreet-/salons/luxewigbooth/">
@@ -260,7 +260,7 @@ footer{
 <div class="service"><div class="service-name">BRAIDS</div></div>
 <div class="service"><div class="service-name">WIG INSTALLATION</div></div>
 <div class="service"><div class="service-name">NATURAL HAIR STYLING</div></div>
-<div class="service"><div class="service-name">HAIR TREATMENT & WASH</div></div>
+<div class="service"><div class="service-name">HAIR TREATMENT &amp; WASH</div></div>
 <div class="service"><div class="service-name">HOUSE CALL (MOBILE SERVICE)</div></div>
 </details>
 
@@ -305,4 +305,4 @@ modal.onclick=()=>{
 </script>
 
 </body>
-  </html>
+</html>
