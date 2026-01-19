@@ -5,369 +5,257 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WARSTREET DIGITAL GIFT STORE</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-:root {
-    --deep-brown:#2b1b17;
-    --rose-gold:#b76e79;
-    --rose-gold-light:#e0bfb8;
-    --text-light:#f5f5f5;
+:root{
+  --deep:#2b1b17;
+  --rose:#b76e79;
+  --rose-soft:#e0bfb8;
+  --text:#f5f5f5;
 }
 
-* {
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:radial-gradient(circle at 30% 20%,#3a2621,#1c1311);
+  font-family:"Inter Tight",system-ui;
+  color:var(--text);
+  text-align:center;
 }
 
-body {
-    background:var(--deep-brown);
-    color:var(--text-light);
-    font-family:'Inter',sans-serif;
-    text-align:center;
+/* MASTER CARD */
+.master-card{
+  max-width:480px;
+  margin:40px auto 80px;
+  border-radius:28px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(183,110,121,.25);
+  overflow:hidden;
 }
 
-/* TYPOGRAPHY */
-h1,h2,.tier-name {
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.2em;
-}
-.tagline,.section-header,.audio-label {
-    text-transform:uppercase;
-    letter-spacing:.15em;
-    opacity:.8;
-}
+/* RHYTHM */
+section,header,footer{padding:90px 24px}
 
 /* HEADER */
-header {
-    padding:80px 20px 40px;
+h1{
+  font-size:1.6rem;
+  letter-spacing:.22em;
+  margin-bottom:12px;
 }
-h1 {
-    font-size:1.8rem;
-    margin-bottom:12px;
+.tagline{
+  font-size:.8rem;
+  letter-spacing:.18em;
+  opacity:.75;
+}
+.btn-premium{
+  display:inline-block;
+  margin-top:36px;
+  padding:18px 42px;
+  border:1px solid var(--rose);
+  color:var(--rose);
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.18em;
 }
 
-/* PRIMARY NAV */
-.btn-premium {
-    padding:18px 40px;
-    border:1px solid var(--rose-gold);
-    color:var(--rose-gold);
-    text-decoration:none;
-    display:inline-block;
-    margin:20px 0;
+/* AUDIO */
+.audio-player{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  max-width:300px;
+  margin:0 auto 18px;
 }
-.btn-premium:hover {
-    background:var(--rose-gold);
-    color:var(--deep-brown);
+.audio-player button{
+  width:52px;height:52px;
+  border-radius:50%;
+  border:1px solid var(--rose);
+  background:none;
+  color:var(--rose);
 }
-
-/* AUDIO SECTION */
-.audio-section {
-    padding:60px 20px 80px;
-}
-.audio-player {
-    display:flex;
-    align-items:center;
-    gap:15px;
-    max-width:320px;
-    margin:0 auto 22px;
-}
-.audio-player button {
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    border:1px solid var(--rose-gold);
-    background:transparent;
-    color:var(--rose-gold);
-    font-size:1rem;
-    cursor:pointer;
-}
-.progress {
-    flex:1;
-    height:4px;
-    background:rgba(255,255,255,.15);
-}
-.progress-fill {
-    height:100%;
-    width:0%;
-    background:var(--rose-gold);
-}
-.audio-label {
-    font-size:.7rem;
+.progress{flex:1;height:3px;background:rgba(255,255,255,.15)}
+.progress-fill{height:100%;width:0;background:var(--rose)}
+.audio-label{
+  font-size:.7rem;
+  letter-spacing:.16em;
+  opacity:.6;
 }
 
 /* SLIDESHOW */
-.slideshow-section {
-    padding:60px 0;
-    background:rgba(0,0,0,.15);
+.slideshow{background:rgba(0,0,0,.18)}
+.slideshow-container{position:relative;height:320px;overflow:hidden}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.slide.active{opacity:1}
+.slide img.bg{
+  position:absolute;width:100%;height:100%;
+  object-fit:cover;
+  filter:blur(22px) brightness(.6);
+  transform:scale(1.2);
 }
-.slideshow-container {
-    position:relative;
-    width:100%;
-    height:320px;
-    overflow:hidden;
-}
-.slide {
-    position:absolute;
-    inset:0;
-    opacity:0;
-    transition:opacity 1s ease;
-}
-.slide.active { opacity:1; }
-.slide img.bg {
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:blur(20px);
-    transform:scale(1.2);
-}
-.slide img.main {
-    position:relative;
-    max-width:90%;
-    max-height:90%;
-    object-fit:contain;
+.slide img.main{position:relative;max-width:90%;max-height:90%;object-fit:contain}
+.hosts-copy{
+  font-size:.75rem;
+  letter-spacing:.14em;
+  opacity:.7;
+  margin-bottom:30px;
 }
 
 /* TIERS */
-.tiers-section {
-    padding:40px 20px;
-    max-width:420px;
-    margin:0 auto;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
+.tiers{display:flex;flex-direction:column;gap:22px}
+.tier-btn{
+  padding:28px 22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.04);
+  box-shadow:inset 0 0 0 1px rgba(183,110,121,.25);
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.18em;
+  cursor:pointer;
+  transition:transform .35s ease, box-shadow .35s ease;
 }
-.tier-btn {
-    padding:24px;
-    border:1px solid rgba(183,110,121,.4);
-    background:rgba(255,255,255,.03);
-    color:#fff;
-    cursor:pointer;
-}
-.tier-btn:hover {
-    border-color:var(--rose-gold);
-}
+.tier-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.4)}
 
 /* MODAL */
-.modal {
-    position:fixed;
-    inset:0;
-    background:rgba(43,27,23,.98);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    z-index:999;
+.modal{
+  position:fixed;inset:0;
+  background:rgba(20,12,10,.95);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(6px);
 }
-.modal-box {
-    max-width:420px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    position:relative;
+.modal-box{
+  max-width:420px;width:100%;
+  background:rgba(43,27,23,.97);
+  border-radius:26px;
+  padding:36px 26px;
+  position:relative;
 }
-.back-arrow {
-    position:absolute;
-    top:-10px;
-    left:0;
-    background:none;
-    border:none;
-    color:var(--rose-gold-light);
-    font-size:1.6rem;
-    cursor:pointer;
+.back-arrow{
+  position:absolute;top:16px;left:16px;
+  background:none;border:none;
+  color:var(--rose-soft);font-size:1.4rem;
 }
-.modal-price {
-    color:var(--rose-gold);
-    font-weight:700;
-    font-size:1.2rem;
+.modal-price{color:var(--rose);margin:14px 0;font-weight:700}
+.uses-btn{
+  margin-top:18px;
+  padding:14px;
+  border:1px solid var(--rose-soft);
+  background:none;
+  color:var(--rose-soft);
+  letter-spacing:.14em;
 }
-.uses-btn {
-    border:1px solid var(--rose-gold-light);
-    background:transparent;
-    color:var(--rose-gold-light);
-    padding:14px;
-    text-transform:uppercase;
-    font-size:.75rem;
+.uses-list{font-size:.75rem;opacity:.7;line-height:1.9}
+.hidden{display:none}
+.sample{display:block;margin-top:10px;color:var(--rose-soft);font-size:.75rem;text-decoration:none}
+.sample.disabled{opacity:.3;pointer-events:none}
+.order-btn{
+  margin-top:26px;
+  padding:18px;width:100%;
+  background:var(--rose);
+  border:none;
+  color:var(--deep);
+  font-weight:700;
 }
-.uses-list {
-    font-size:.75rem;
-    opacity:.75;
-    line-height:1.8;
-}
-.hidden { display:none; }
-
-.sample {
-    color:var(--rose-gold-light);
-    text-decoration:none;
-    font-size:.8rem;
-}
-.sample.disabled {
-    opacity:.3;
-    pointer-events:none;
-}
-
-.order-btn {
-    padding:18px;
-    background:var(--rose-gold);
-    border:none;
-    color:var(--deep-brown);
-    font-weight:700;
-    cursor:pointer;
-}
-.call-btn {
-    padding:18px;
-    border:1px solid var(--rose-gold);
-    color:var(--rose-gold);
-    text-decoration:none;
-}
-
-/* SOCIAL */
-.social-dashboard {
-    padding:70px 20px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
-    max-width:420px;
-    margin:0 auto;
-}
-.social-btn {
-    padding:28px 10px;
-    border:2px solid rgba(183,110,121,.3);
-    color:#fff;
-    text-decoration:none;
-    font-weight:700;
-    letter-spacing:.2em;
-    font-size:.7rem;
+.call-btn{
+  display:block;margin-top:14px;
+  padding:16px;border:1px solid var(--rose);
+  color:var(--rose);text-decoration:none;
 }
 
 /* FOOTER */
-footer {
-    padding:60px 20px;
-    opacity:.4;
-    font-size:.65rem;
-}
+footer{font-size:.65rem;opacity:.4}
 </style>
 </head>
 
 <body>
 
+<div class="master-card">
+
 <header>
-<h1>WARSTREET DIGITAL GIFT STORE</h1>
-<p class="tagline">Gifts that carry memories.</p>
+  <h1>WARSTREET DIGITAL GIFT STORE</h1>
+  <p class="tagline">Gifts that carry memories.</p>
+  <a class="btn-premium" href="http://warstreetdigital.github.io/Shopystreet-/Explore">
+    EXPLORE OTHER STORES
+  </a>
 </header>
 
-<a class="btn-premium" href="http://warstreetdigital.github.io/Shopystreet-/Explore">
-EXPLORE OTHER STORES
-</a>
-
-<section class="audio-section">
-    <div class="audio-player">
-        <button id="playPause">▶</button>
-        <div class="progress"><div class="progress-fill"></div></div>
-        <audio id="storeAudio" src="store-audio.mp3"></audio>
-    </div>
-    <p class="audio-label">Listen to the store</p>
+<section>
+  <div class="audio-player">
+    <button id="playPause">▶</button>
+    <div class="progress"><div class="progress-fill"></div></div>
+    <audio id="storeAudio" src="store-audio.mp3"></audio>
+  </div>
+  <div class="audio-label">STORE AMBIENCE</div>
 </section>
 
-<section class="slideshow-section">
-<p class="section-header">These are hosts for your memories</p>
-<div class="slideshow-container">
-    <div class="slide active"><img src="slide1.jpg" class="bg"><img src="slide1.jpg" class="main"></div>
-    <div class="slide"><img src="slide2.jpg" class="bg"><img src="slide2.jpg" class="main"></div>
-    <div class="slide"><img src="slide3.jpg" class="bg"><img src="slide3.jpg" class="main"></div>
-    <div class="slide"><img src="slide4.jpg" class="bg"><img src="slide4.jpg" class="main"></div>
-    <div class="slide"><img src="slide5.jpg" class="bg"><img src="slide5.jpg" class="main"></div>
-    <div class="slide"><img src="slide6.jpg" class="bg"><img src="slide6.jpg" class="main"></div>
-    <div class="slide"><img src="slide7.jpg" class="bg"><img src="slide7.jpg" class="main"></div>
-    <div class="slide"><img src="slide8.jpg" class="bg"><img src="slide8.jpg" class="main"></div>
-</div>
+<section class="slideshow">
+  <p class="hosts-copy">
+    THESE ARE VESSELS FOR YOUR MEMORIES — DIGITAL, LINK-BASED, OR PHYSICAL
+  </p>
+  <div class="slideshow-container">
+    <div class="slide active"><img class="bg" src="slide1.jpg"><img class="main" src="slide1.jpg"></div>
+    <div class="slide"><img class="bg" src="slide2.jpg"><img class="main" src="slide2.jpg"></div>
+    <div class="slide"><img class="bg" src="slide3.jpg"><img class="main" src="slide3.jpg"></div>
+    <div class="slide"><img class="bg" src="slide4.jpg"><img class="main" src="slide4.jpg"></div>
+    <div class="slide"><img class="bg" src="slide5.jpg"><img class="main" src="slide5.jpg"></div>
+    <div class="slide"><img class="bg" src="slide6.jpg"><img class="main" src="slide6.jpg"></div>
+    <div class="slide"><img class="bg" src="slide7.jpg"><img class="main" src="slide7.jpg"></div>
+    <div class="slide"><img class="bg" src="slide8.jpg"><img class="main" src="slide8.jpg"></div>
+  </div>
 </section>
 
-<section class="tiers-section">
-<button class="tier-btn" onclick="openTier('Voice.it','5.00 USD',['Personal voice messages','Love notes','Valentine’s notes','Apologies','Motivation / affirmations','Private spoken memories'],'https://warstreetdigital.github.io/Voiceit-/id-000001/')">VOICE.IT</button>
-
-<button class="tier-btn" onclick="openTier('DIGITAL APPRECIATION CARDS','10.00 USD',['Thank-you messages','Brand voice greetings','QR voice cards','Contact voice'],null)">DIGITAL APPRECIATION CARDS</button>
-
-<button class="tier-btn" onclick="openTier('Proposal Memory','15.00 USD',['Romantic proposals','Valentine moments','Yes / No experiences'],'https://warstreetdigital.github.io/Events-digital-invitations/Samantha-valentine')">PROPOSAL MEMORY</button>
-
-<button class="tier-btn" onclick="openTier('Story Memory','15.00 USD',['Birthdays','Friendships','Love stories','Valentine stories','Milestones'],'https://warstreetdigital.github.io/warstreet/samantha-birthday/')">STORY MEMORY</button>
-
-<button class="tier-btn" onclick="openTier('Digital Event Invitation','15.00 USD',['Birthdays','Weddings','Private events','Launches','RSVP invites'],'https://warstreetdigital.github.io/warstreet/invitations/vee-birthday-07-feb/')">DIGITAL EVENT INVITATION</button>
-
-<button class="tier-btn" onclick="openTier('Legacy Video Memory','40.00 USD',['Memorials','Parents & elders','Life tributes','Generational memories'],null)">LEGACY VIDEO MEMORY</button>
-</section>
-
-<section class="social-dashboard">
-<a class="social-btn" href="https://www.instagram.com/warstreet_beauty_and_lifestyle?igsh=M20ybGM2MjQwbHln">INSTAGRAM</a>
-<a class="social-btn" href="https://www.tiktok.com/@warstreet_beauty_show?_r=1&_t=ZM-92oFwiE1e0K">TIKTOK</a>
+<section>
+  <div class="tiers">
+    <button class="tier-btn" onclick="openTier('VOICE.IT','5.00 USD',['Personal voice messages','Love notes','Valentine’s notes','Apologies','Motivation / affirmations','Private spoken memories'],'https://warstreetdigital.github.io/Voiceit-/id-000001/')">VOICE.IT</button>
+    <button class="tier-btn" onclick="openTier('DIGITAL APPRECIATION CARDS','10.00 USD',['Thank-you messages','Brand voice greetings','QR voice cards','Contact voice'],null)">DIGITAL APPRECIATION CARDS</button>
+    <button class="tier-btn" onclick="openTier('PROPOSAL MEMORY','15.00 USD',['Romantic proposals','Valentine moments','Yes / No experiences'],'https://warstreetdigital.github.io/Events-digital-invitations/Samantha-valentine')">PROPOSAL MEMORY</button>
+    <button class="tier-btn" onclick="openTier('STORY MEMORY','15.00 USD',['Birthdays','Friendships','Love stories','Milestones'],'https://warstreetdigital.github.io/warstreet/samantha-birthday/')">STORY MEMORY</button>
+    <button class="tier-btn" onclick="openTier('DIGITAL EVENT INVITATION','15.00 USD',['Birthdays','Weddings','Private events','Launches','RSVP invites'],'https://warstreetdigital.github.io/warstreet/invitations/vee-birthday-07-feb/')">DIGITAL EVENT INVITATION</button>
+    <button class="tier-btn" onclick="openTier('LEGACY VIDEO MEMORY','40.00 USD',['Memorials','Parents & elders','Life tributes','Generational memories'],null)">LEGACY VIDEO MEMORY</button>
+  </div>
 </section>
 
 <footer>Powered by Shopystreet</footer>
 
-<div id="modal" class="modal">
-<div class="modal-box">
-<button class="back-arrow" onclick="closeModal()">←</button>
-<h2 id="mTitle"></h2>
-<p id="mPrice" class="modal-price"></p>
-
-<button class="uses-btn" onclick="toggleUses()">View uses</button>
-<div id="usesList" class="uses-list hidden"></div>
-
-<a id="s1" class="sample">View Sample 1</a>
-<a id="s2" class="sample disabled">View Sample 2</a>
-
-<button id="orderBtn" class="order-btn">PLACE ORDER (WHATSAPP)</button>
-<a href="tel:0779388560" class="call-btn">CALL STORE</a>
 </div>
+
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <button class="back-arrow" onclick="closeModal()">←</button>
+    <h2 id="mTitle"></h2>
+    <p id="mPrice" class="modal-price"></p>
+    <button class="uses-btn" onclick="toggleUses()">WHAT THIS HOLDS</button>
+    <div id="usesList" class="uses-list hidden"></div>
+    <a id="s1" class="sample">VIEW SAMPLE</a>
+    <button id="orderBtn" class="order-btn">PLACE ORDER (WHATSAPP)</button>
+    <a href="tel:0779388560" class="call-btn">CALL STORE</a>
+  </div>
 </div>
 
 <script>
-/* AUDIO */
 const audio=document.getElementById("storeAudio");
 const btn=document.getElementById("playPause");
 const fill=document.querySelector(".progress-fill");
-
-btn.onclick=()=>{
-    if(audio.paused){audio.play();btn.textContent="❚❚";}
-    else{audio.pause();btn.textContent="▶";}
-};
+btn.onclick=()=>audio.paused?(audio.play(),btn.textContent="❚❚"):(audio.pause(),btn.textContent="▶");
 audio.ontimeupdate=()=>fill.style.width=(audio.currentTime/audio.duration)*100+"%";
 
-/* SLIDESHOW */
-let slides=document.querySelectorAll('.slide'),i=0;
-setInterval(()=>{
-slides[i].classList.remove('active');
-i=(i+1)%slides.length;
-slides[i].classList.add('active');
-},3500);
+let slides=document.querySelectorAll(".slide"),i=0;
+setInterval(()=>{slides[i].classList.remove("active");i=(i+1)%slides.length;slides[i].classList.add("active")},3500);
 
-/* MODAL */
-function openTier(name,price,uses,sample1){
-document.getElementById("modal").style.display="flex";
-document.getElementById("mTitle").innerText=name;
-document.getElementById("mPrice").innerText=price;
-
-const list=document.getElementById("usesList");
-list.innerHTML=uses.map(u=>"• "+u).join("<br>");
-
-const s1=document.getElementById("s1");
-if(sample1){s1.href=sample1;s1.classList.remove("disabled");}
-else{s1.classList.add("disabled");}
-
-document.getElementById("orderBtn").onclick=()=>{
-window.location.href=`https://wa.me/263779388560?text=${encodeURIComponent("Hi, I’d like to order the "+name+" memory.")}`;
-};
+function openTier(n,p,u,s){
+  modal.style.display="flex";
+  mTitle.innerText=n;
+  mPrice.innerText=p;
+  usesList.innerHTML=u.map(x=>"• "+x).join("<br>");
+  s1.classList.toggle("disabled",!s);
+  if(s) s1.href=s;
+  orderBtn.onclick=()=>location.href=`https://wa.me/263779388560?text=${encodeURIComponent("Hi, I’d like to order the "+n+" memory.")}`;
 }
-function toggleUses(){
-document.getElementById("usesList").classList.toggle("hidden");
-}
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
+function toggleUses(){usesList.classList.toggle("hidden")}
+function closeModal(){modal.style.display="none"}
 </script>
 
 </body>
