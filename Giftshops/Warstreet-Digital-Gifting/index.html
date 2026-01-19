@@ -114,7 +114,26 @@ h1{
   cursor:pointer;
   transition:transform .35s ease, box-shadow .35s ease;
 }
-.tier-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.4)}
+.tier-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(0,0,0,.4);
+}
+
+/* SOCIAL */
+.social-dashboard{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.social-btn{
+  padding:22px 10px;
+  border:1px solid rgba(183,110,121,.3);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:.18em;
+  font-size:.7rem;
+}
 
 /* MODAL */
 .modal{
@@ -138,19 +157,47 @@ h1{
   background:none;border:none;
   color:var(--rose-soft);font-size:1.4rem;
 }
-.modal-price{color:var(--rose);margin:14px 0;font-weight:700}
+.modal-price{
+  color:var(--rose);
+  margin:14px 0;
+  font-weight:700;
+  letter-spacing:.12em;
+}
 .uses-btn{
   margin-top:18px;
   padding:14px;
   border:1px solid var(--rose-soft);
   background:none;
   color:var(--rose-soft);
-  letter-spacing:.14em;
+  letter-spacing:.16em;
+  width:100%;
 }
-.uses-list{font-size:.75rem;opacity:.7;line-height:1.9}
+.uses-list{
+  font-size:.75rem;
+  opacity:.7;
+  line-height:1.9;
+  margin-top:14px;
+}
 .hidden{display:none}
-.sample{display:block;margin-top:10px;color:var(--rose-soft);font-size:.75rem;text-decoration:none}
-.sample.disabled{opacity:.3;pointer-events:none}
+
+/* SAMPLES */
+.sample{
+  display:block;
+  margin-top:10px;
+  padding:12px;
+  border:1px solid rgba(224,191,184,.4);
+  border-radius:14px;
+  color:var(--rose-soft);
+  font-size:.75rem;
+  letter-spacing:.14em;
+  text-decoration:none;
+}
+.sample.faint{
+  opacity:.35;
+  pointer-events:none;
+}
+
+/* ACTIONS */
 .order-btn{
   margin-top:26px;
   padding:18px;width:100%;
@@ -158,11 +205,13 @@ h1{
   border:none;
   color:var(--deep);
   font-weight:700;
+  letter-spacing:.14em;
 }
 .call-btn{
   display:block;margin-top:14px;
   padding:16px;border:1px solid var(--rose);
-  color:var(--rose);text-decoration:none;
+  color:var(--rose);
+  text-decoration:none;
 }
 
 /* FOOTER */
@@ -188,7 +237,7 @@ footer{font-size:.65rem;opacity:.4}
     <div class="progress"><div class="progress-fill"></div></div>
     <audio id="storeAudio" src="store-audio.mp3"></audio>
   </div>
-  <div class="audio-label">STORE AMBIENCE</div>
+  <div class="audio-label">STORE AMBIENCE · VALENTINE MODE ACTIVE</div>
 </section>
 
 <section class="slideshow">
@@ -200,22 +249,44 @@ footer{font-size:.65rem;opacity:.4}
     <div class="slide"><img class="bg" src="slide2.jpg"><img class="main" src="slide2.jpg"></div>
     <div class="slide"><img class="bg" src="slide3.jpg"><img class="main" src="slide3.jpg"></div>
     <div class="slide"><img class="bg" src="slide4.jpg"><img class="main" src="slide4.jpg"></div>
-    <div class="slide"><img class="bg" src="slide5.jpg"><img class="main" src="slide5.jpg"></div>
-    <div class="slide"><img class="bg" src="slide6.jpg"><img class="main" src="slide6.jpg"></div>
-    <div class="slide"><img class="bg" src="slide7.jpg"><img class="main" src="slide7.jpg"></div>
-    <div class="slide"><img class="bg" src="slide8.jpg"><img class="main" src="slide8.jpg"></div>
   </div>
 </section>
 
 <section>
   <div class="tiers">
-    <button class="tier-btn" onclick="openTier('VOICE.IT','5.00 USD',['Personal voice messages','Love notes','Valentine’s notes','Apologies','Motivation / affirmations','Private spoken memories'],'https://warstreetdigital.github.io/Voiceit-/id-000001/')">VOICE.IT</button>
-    <button class="tier-btn" onclick="openTier('DIGITAL APPRECIATION CARDS','10.00 USD',['Thank-you messages','Brand voice greetings','QR voice cards','Contact voice'],null)">DIGITAL APPRECIATION CARDS</button>
-    <button class="tier-btn" onclick="openTier('PROPOSAL MEMORY','15.00 USD',['Romantic proposals','Valentine moments','Yes / No experiences'],'https://warstreetdigital.github.io/Events-digital-invitations/Samantha-valentine')">PROPOSAL MEMORY</button>
-    <button class="tier-btn" onclick="openTier('STORY MEMORY','15.00 USD',['Birthdays','Friendships','Love stories','Milestones'],'https://warstreetdigital.github.io/warstreet/samantha-birthday/')">STORY MEMORY</button>
-    <button class="tier-btn" onclick="openTier('DIGITAL EVENT INVITATION','15.00 USD',['Birthdays','Weddings','Private events','Launches','RSVP invites'],'https://warstreetdigital.github.io/warstreet/invitations/vee-birthday-07-feb/')">DIGITAL EVENT INVITATION</button>
-    <button class="tier-btn" onclick="openTier('LEGACY VIDEO MEMORY','40.00 USD',['Memorials','Parents & elders','Life tributes','Generational memories'],null)">LEGACY VIDEO MEMORY</button>
+    <button class="tier-btn" onclick="openTier('VOICE.IT','5.00 USD',
+    ['Personal voice messages','Love notes','Valentine’s notes','Apologies','Motivation / affirmations'],
+    ['https://warstreetdigital.github.io/Voiceit-/id-000001/',null,null])">VOICE.IT</button>
+
+    <button class="tier-btn" onclick="openTier('DIGITAL APPRECIATION CARDS','10.00 USD',
+    ['Thank-you messages','Brand voice greetings','QR voice cards'],
+    [null,null,null])">DIGITAL APPRECIATION CARDS</button>
+
+    <button class="tier-btn" onclick="openTier('PROPOSAL MEMORY','15.00 USD',
+    ['Romantic proposals','Valentine moments','Yes / No experiences'],
+    ['https://warstreetdigital.github.io/Events-digital-invitations/Samantha-valentine',null,null])">PROPOSAL MEMORY</button>
+
+    <button class="tier-btn" onclick="openTier('STORY MEMORY','15.00 USD',
+    ['Birthdays','Friendships','Love stories','Milestones'],
+    ['https://warstreetdigital.github.io/warstreet/samantha-birthday/',null,null])">STORY MEMORY</button>
+
+    <button class="tier-btn" onclick="openTier('DIGITAL EVENT INVITATION','15.00 USD',
+    ['Birthdays','Weddings','Private events','RSVP invites'],
+    ['https://warstreetdigital.github.io/warstreet/invitations/vee-birthday-07-feb/',null,null])">DIGITAL EVENT INVITATION</button>
+
+    <button class="tier-btn" onclick="openTier('LEGACY VIDEO MEMORY','40.00 USD',
+    ['Memorials','Parents & elders','Life tributes','Generational memories'],
+    [null,null,null])">LEGACY VIDEO MEMORY</button>
+
+    <button class="tier-btn" onclick="openTier('PORTRAIT MEMORY','20.00 USD',
+    ['Digital portrait stories','QR-linked physical portraits','Voice or story behind the image'],
+    [null,null,null])">PORTRAIT MEMORY</button>
   </div>
+</section>
+
+<section class="social-dashboard">
+  <a class="social-btn" href="https://www.instagram.com/warstreet_beauty_and_lifestyle">INSTAGRAM</a>
+  <a class="social-btn" href="https://www.tiktok.com/@warstreet_beauty_show">TIKTOK</a>
 </section>
 
 <footer>Powered by Shopystreet</footer>
@@ -227,9 +298,14 @@ footer{font-size:.65rem;opacity:.4}
     <button class="back-arrow" onclick="closeModal()">←</button>
     <h2 id="mTitle"></h2>
     <p id="mPrice" class="modal-price"></p>
+
     <button class="uses-btn" onclick="toggleUses()">WHAT THIS HOLDS</button>
     <div id="usesList" class="uses-list hidden"></div>
-    <a id="s1" class="sample">VIEW SAMPLE</a>
+
+    <a id="s1" class="sample">SAMPLE 1</a>
+    <a id="s2" class="sample">SAMPLE 2</a>
+    <a id="s3" class="sample">SAMPLE 3</a>
+
     <button id="orderBtn" class="order-btn">PLACE ORDER (WHATSAPP)</button>
     <a href="tel:0779388560" class="call-btn">CALL STORE</a>
   </div>
@@ -245,17 +321,22 @@ audio.ontimeupdate=()=>fill.style.width=(audio.currentTime/audio.duration)*100+"
 let slides=document.querySelectorAll(".slide"),i=0;
 setInterval(()=>{slides[i].classList.remove("active");i=(i+1)%slides.length;slides[i].classList.add("active")},3500);
 
-function openTier(n,p,u,s){
+function openTier(name,price,uses,samples){
+  history.pushState({modal:true},"");
   modal.style.display="flex";
-  mTitle.innerText=n;
-  mPrice.innerText=p;
-  usesList.innerHTML=u.map(x=>"• "+x).join("<br>");
-  s1.classList.toggle("disabled",!s);
-  if(s) s1.href=s;
-  orderBtn.onclick=()=>location.href=`https://wa.me/263779388560?text=${encodeURIComponent("Hi, I’d like to order the "+n+" memory.")}`;
+  mTitle.innerText=name;
+  mPrice.innerText=price;
+  usesList.innerHTML=uses.map(u=>"• "+u).join("<br>");
+  [s1,s2,s3].forEach((el,i)=>{
+    if(samples[i]){el.href=samples[i];el.classList.remove("faint")}
+    else{el.classList.add("faint")}
+  });
+  orderBtn.onclick=()=>location.href=`https://wa.me/263779388560?text=${encodeURIComponent("Hi, I’d like to order the "+name+" memory.")}`;
 }
+
 function toggleUses(){usesList.classList.toggle("hidden")}
-function closeModal(){modal.style.display="none"}
+function closeModal(){modal.style.display="none";history.back()}
+window.onpopstate=()=>{if(modal.style.display==="flex")modal.style.display="none";}
 </script>
 
 </body>
