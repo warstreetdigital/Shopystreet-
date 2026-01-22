@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HARARE BEST GRAIN KEEPER</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#1f7a3f;
+  --green-soft:#e6f2eb;
+  --yellow:#e6c15a;
+  --text:#1a1a1a;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:"Inter Tight",system-ui;
+  background:#ffffff;
+  color:var(--text);
+}
+
+/* MASTER */
+.master{
+  max-width:520px;
+  margin:40px auto 80px;
+  border-radius:26px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  overflow:hidden;
+}
+
+/* SECTIONS */
+section,header,footer{padding:80px 22px;text-align:center}
+
+/* COVER */
+.cover{
+  position:relative;
+  height:260px;
+  overflow:hidden;
+}
+.cover img{
+  position:absolute;
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(.85);
+}
+
+/* HEADER */
+h1{
+  font-size:1.5rem;
+  letter-spacing:.18em;
+  color:var(--green);
+  font-weight:700;
+}
+.tagline{
+  font-size:.8rem;
+  letter-spacing:.16em;
+  opacity:.7;
+  font-weight:600;
+}
+
+/* PRIMARY BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:26px;
+  padding:18px 36px;
+  border-radius:18px;
+  border:2px solid var(--green);
+  background:#ffffff;
+  color:var(--green);
+  font-weight:700;
+  letter-spacing:.14em;
+  text-decoration:none;
+  transition:all .25s ease;
+}
+.btn:hover{
+  background:var(--green);
+  color:#fff;
+}
+
+/* AUDIO */
+.audio-section{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  max-width:320px;
+  margin:0 auto 36px;
+}
+.audio{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  width:100%;
+}
+.audio button{
+  width:50px;height:50px;
+  border-radius:50%;
+  border:1px solid var(--green);
+  background:none;
+  color:var(--green);
+  font-weight:700;
+  font-size:1rem;
+}
+.bar{flex:1;height:3px;background:#ddd;border-radius:2px}
+.fill{height:100%;width:0;background:var(--green);border-radius:2px}
+.audio-title{
+  font-size:.9rem;
+  font-weight:700;
+  color:var(--green);
+  letter-spacing:.12em;
+}
+
+/* VIDEO */
+.video-wrap video{
+  width:100%;
+  border-radius:20px;
+}
+
+/* PRODUCTS */
+.products{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+.product-btn{
+  padding:26px;
+  border-radius:22px;
+  background:var(--green-soft);
+  border:1px solid rgba(31,122,63,.25);
+  font-weight:700;
+  letter-spacing:.16em;
+  cursor:pointer;
+  transition:all .25s ease;
+}
+.product-btn:hover{
+  background:var(--green);
+  color:#fff;
+}
+
+/* FOOTER */
+.footer-wrap{
+  padding:50px 22px 30px;
+  border-top:2px solid var(--yellow);
+  background:#ffffff;
+}
+.contact{
+  font-size:.75rem;
+  letter-spacing:.12em;
+  color:var(--green);
+  margin-bottom:16px;
+}
+.footer-note{
+  font-size:.65rem;
+  opacity:.55;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:9999;
+}
+.modal-box{
+  background:#fff;
+  border-radius:24px;
+  max-width:420px;
+  width:100%;
+  padding:30px;
+  position:relative;
+  text-align:center;
+}
+.back{
+  position:absolute;
+  top:16px;left:16px;
+  background:none;
+  border:none;
+  font-size:1.4rem;
+  font-weight:700;
+  cursor:pointer;
+}
+.modal-box h2{
+  color:var(--green);
+  letter-spacing:.12em;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.price{
+  margin:10px 0;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.modal-images{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:8px;
+  margin:16px 0;
+}
+.modal-images img{
+  width:100%;
+  border-radius:10px;
+  cursor:pointer;
+}
+.modal-images img.fullview{
+  position:fixed;
+  inset:0;
+  width:auto;
+  height:auto;
+  max-width:95%;
+  max-height:95%;
+  margin:auto;
+  background:rgba(0,0,0,.9);
+  z-index:10000;
+  border-radius:10px;
+  display:block;
+}
+
+/* ACTION BUTTONS */
+.action{
+  margin-top:18px;
+  width:100%;
+  padding:16px;
+  background:var(--green);
+  color:#fff;
+  border:none;
+  font-weight:700;
+  letter-spacing:.14em;
+  transition:all .25s ease;
+}
+.action:hover{
+  background:#155d2a;
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="master">
+
+<!-- COVER -->
+<div class="cover">
+  <img src="cover-grain.jpg">
+</div>
+
+<header>
+  <h1>HARARE BEST GRAIN KEEPER</h1>
+  <p class="tagline">BULK GRAIN SOURCE & SUPPLY</p>
+</header>
+
+<section class="audio-section">
+  <div class="audio-title">STORE AMBIENCE · AGRICULTURE MODE ACTIVE</div>
+  <div class="audio">
+    <button id="play">▶</button>
+    <div class="bar"><div class="fill"></div></div>
+    <audio id="audio" src="store-audio.mp3"></audio>
+  </div>
+  <a class="btn" href="https://wa.me/263779068932?text=Hi%20Best%20Grain%20Keeper%2C%20I%20want%20to%20inquire%20about%20products.">INQUIRE PRODUCT</a>
+  <a class="btn" href="tel:0779068932">CALL STORE</a>
+</section>
+
+<section class="video-wrap">
+  <video src="delivery.mp4" controls></video>
+</section>
+
+<section>
+  <div class="products">
+    <button class="product-btn" onclick="openProduct('White Maize','380 USD / tonne','Bulk white maize from 5–1000 tonnes.','maize')">WHITE MAIZE</button>
+    <button class="product-btn" onclick="openProduct('Yellow Maize','340 USD / tonne','Feed and industrial grade yellow maize.','yellowmaize')">YELLOW MAIZE</button>
+    <button class="product-btn" onclick="openProduct('Sugar Beans (Red Speckled)','1650 USD / tonne','Premium bulk sugar beans.','beans')">SUGAR BEANS</button>
+    <button class="product-btn" onclick="openProduct('Soya Beans','600 USD / tonne','High protein soya beans.','soya')">SOYA BEANS</button>
+    <button class="product-btn" onclick="openProduct('Sorghum','400 USD / tonne','Bulk sorghum grain supply.','sorghum')">SORGHUM</button>
+    <button class="product-btn" onclick="openProduct('Barley','400 USD / tonne','Industrial and feed barley.','barley')">BARLEY</button>
+    <button class="product-btn" onclick="openProduct('Wheat','350 USD / tonne','Bulk milling wheat.','wheat')">WHEAT</button>
+    <button class="product-btn" onclick="openProduct('Stock Feed','Variable','Maize bran, wheat bran, soya meal, rain damaged grain, makireshi.','feed')">STOCK FEED</button>
+    <button class="product-btn" onclick="openProduct('Small Tonnage / Buckets','Varies','Bucket of maize 8 USD, Bucket of beans 35 USD. Ideal for small requests or sample orders.','smallton')">SMALL TONNAGE REQUEST</button>
+    <button class="product-btn" onclick="openProduct('Meali Meal / Hupfu / Rice / Flour','Varies','Millet meal, maize meal, rice, wheat flour. Bulk and small requests available.','meal')">MEALI MEAL & GRAINS</button>
+    <button class="product-btn" onclick="farmerStock()">SELL OWN GRAINS</button>
+  </div>
+</section>
+
+<section>
+  <a class="btn" href="https://warstreetdigital.github.io/Shopystreet-/Explore">
+    EXPLORE OTHER SHOPS
+  </a>
+</section>
+
+<div class="footer-wrap">
+  <div class="contact">
+    Contact · Ray / Ronald · 077 906 8932
+  </div>
+  <div class="footer-note">
+    Powered by Shopystreet
+  </div>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <button class="back" onclick="closeModal()">←</button>
+    <h2 id="title"></h2>
+    <p id="price" class="price"></p>
+
+    <div class="modal-images">
+      <img id="i1">
+      <img id="i2">
+      <img id="i3">
+    </div>
+
+    <p id="desc"></p>
+
+    <button class="action" onclick="request()">REQUEST DELIVERY</button>
+  </div>
+</div>
+
+<script>
+const audio=document.getElementById("audio");
+const play=document.getElementById("play");
+const fill=document.querySelector(".fill");
+
+play.onclick=()=>audio.paused?(audio.play(),play.textContent="❚❚"):(audio.pause(),play.textContent="▶");
+audio.ontimeupdate=()=>fill.style.width=(audio.currentTime/audio.duration)*100+"%";
+
+let current="";
+
+function openProduct(t,p,d,b){
+  current=t.toUpperCase();
+  title.innerText=t.toUpperCase();
+  price.innerText=p.toUpperCase();
+  desc.innerText=d.toUpperCase();
+  i1.src=b+"1.jpg";
+  i2.src=b+"2.jpg";
+  i3.src=b+"3.jpg";
+  modal.style.display="flex";
+
+  [i1,i2,i3].forEach(img=>{
+    img.onclick=()=>{
+      img.classList.add('fullview');
+    };
+  });
+}
+
+function closeModal(){
+  [i1,i2,i3].forEach(img=>img.classList.remove('fullview'));
+  modal.style.display="none";
+}
+
+function request(){
+  location.href="https://wa.me/263779068932?text="+encodeURIComponent(
+    "HI BEST GRAIN KEEPER, I AM INTERESTED IN "+current+". PLEASE SHARE AVAILABILITY, CONDITION, LOCATION AND DELIVERY OPTIONS."
+  );
+}
+
+function farmerStock(){
+  location.href="https://wa.me/263779068932?text="+encodeURIComponent(
+    "HI BEST GRAIN KEEPER, I AM A FARMER AND I HAVE GRAIN STOCK AVAILABLE. PLEASE GUIDE ME ON HOW TO SELL THROUGH YOUR STORE."
+  );
+}
+</script>
+
+</body>
+    </html>
